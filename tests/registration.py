@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-from data import test_registration_data
+from helpers import test_registration_data
 from locators import BurgerLocators
 
 
@@ -20,7 +20,7 @@ class TestRegistrationBurger:
         driver.find_element(*BurgerLocators.PASSWORD_FIELD).send_keys("123456")
         driver.find_element(*BurgerLocators.REGISTRATION_BUTTON).click()
 
-        assert driver.find_element(By.XPATH, "//*[@class='Auth_login__3hAey']").is_displayed()
+        assert driver.find_element(*BurgerLocators.FORM_FIELDS).is_displayed()
 
     def test_registration_invalid_password_negative(self, driver):
         driver.find_element(*BurgerLocators.LOG_IN_TO_ACCOUNT_BUTTON).click()
@@ -35,4 +35,4 @@ class TestRegistrationBurger:
         driver.find_element(*BurgerLocators.PASSWORD_FIELD).send_keys("12345")
         driver.find_element(*BurgerLocators.REGISTRATION_BUTTON).click()
 
-        assert driver.find_element(By.XPATH, "//p[contains(.,'Некорректный пароль')]").is_displayed()
+        assert driver.find_element(*BurgerLocators.INVALID_PASSWORD).is_displayed()

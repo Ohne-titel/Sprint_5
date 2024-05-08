@@ -24,6 +24,4 @@ class BurgerLocators:
     SECTION_SAUCE = (By.XPATH, ".//span[contains(text(),'Соусы')]")  # Список Соусы"
     ACTIVE_TUB = (By.XPATH, ".//div[contains(@class, 'current')]/span")  # Активная вкладка конструктора
     SECTION_FILLINGS = (By.XPATH, ".//span[contains(text(),'Начинки')]")  # Список "Начинки"
-
-
-
+    INVALID_PASSWORD = (By.XPATH, "//p[text()='Некорректный пароль']")  # "Некорректный пароль"
