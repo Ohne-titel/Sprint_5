@@ -14,8 +14,8 @@ class TestSwitchToAccount:
             expected_conditions.visibility_of_element_located(BurgerLocators.PLACE_ORDER))
         driver.find_element(*BurgerLocators.PERSONAL_ACCOUNT).click()
         assert driver.current_url == f'{URL}account'
-        # assert driver.find_element(*BurgerLocators.PROFILE_ELEMENT).is_displayed(), "Element doesn't exist"
-        driver.quit()
+
+
 
     def test_switch_to_constructor_positive(self, driver):
         driver.find_element(*BurgerLocators.LOG_IN_TO_ACCOUNT_BUTTON).click()
@@ -28,4 +28,4 @@ class TestSwitchToAccount:
         driver.find_element(*BurgerLocators.CONSTRUCTOR_LINK).click()
         driver.find_element(*BurgerLocators.MAKE_BURGER).click()
         assert driver.find_element(*BurgerLocators.DISPLAYED_ELEMENT).is_displayed()
-        driver.quit()
+
