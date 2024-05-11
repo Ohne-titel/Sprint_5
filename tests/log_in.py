@@ -2,7 +2,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from config import URL
 from locators import BurgerLocators
-from data import test_login_data
+from data import email, password
 
 
 class TestLoginBurger:
@@ -11,10 +11,8 @@ class TestLoginBurger:
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located(BurgerLocators.FORM_FIELDS))
 
-        email_data, password_data = test_login_data()
-
-        driver.find_element(*BurgerLocators.EMAIL_FIELD).send_keys(email_data)
-        driver.find_element(*BurgerLocators.PASSWORD_FIELD).send_keys(password_data)
+        driver.find_element(*BurgerLocators.EMAIL_FIELD).send_keys(email)
+        driver.find_element(*BurgerLocators.PASSWORD_FIELD).send_keys(password)
         driver.find_element(*BurgerLocators.LOG_IN_BUTTON).click()
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located(BurgerLocators.PLACE_ORDER))
@@ -25,10 +23,8 @@ class TestLoginBurger:
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located(BurgerLocators.FORM_FIELDS))
 
-        email_data, password_data = test_login_data()
-
-        driver.find_element(*BurgerLocators.EMAIL_FIELD).send_keys(email_data)
-        driver.find_element(*BurgerLocators.PASSWORD_FIELD).send_keys(password_data)
+        driver.find_element(*BurgerLocators.EMAIL_FIELD).send_keys(email)
+        driver.find_element(*BurgerLocators.PASSWORD_FIELD).send_keys(password)
         driver.find_element(*BurgerLocators.LOG_IN_BUTTON).click()
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located(BurgerLocators.PLACE_ORDER))
@@ -39,10 +35,8 @@ class TestLoginBurger:
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located(BurgerLocators.FORM_FIELDS))
 
-        email_data, password_data = test_login_data()
-
-        driver.find_element(*BurgerLocators.EMAIL_FIELD).send_keys(email_data)
-        driver.find_element(*BurgerLocators.PASSWORD_FIELD).send_keys(password_data)
+        driver.find_element(*BurgerLocators.EMAIL_FIELD).send_keys(email)
+        driver.find_element(*BurgerLocators.PASSWORD_FIELD).send_keys(password)
         driver.find_element(*BurgerLocators.LOG_IN_BUTTON).click()
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located(BurgerLocators.PLACE_ORDER))
@@ -56,10 +50,9 @@ class TestLoginBurger:
         driver.find_element(*BurgerLocators.LOG_IN_LINK).click()
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located(BurgerLocators.FORM_FIELDS))
-        email_data, password_data = test_login_data()
 
-        driver.find_element(*BurgerLocators.EMAIL_FIELD).send_keys(email_data)
-        driver.find_element(*BurgerLocators.PASSWORD_FIELD).send_keys(password_data)
+        driver.find_element(*BurgerLocators.EMAIL_FIELD).send_keys(email)
+        driver.find_element(*BurgerLocators.PASSWORD_FIELD).send_keys(password)
         driver.find_element(*BurgerLocators.LOG_IN_BUTTON).click()
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located(BurgerLocators.PLACE_ORDER))
